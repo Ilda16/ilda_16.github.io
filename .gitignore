@@ -1,0 +1,13 @@
+.vs/
+*.user
+*.suo
+*.dbmdl
+*.bak
+*.log
+*.tmp
+*.obj
+*.pdb
+*.cache
+*.csproj.user
+bin/
+obj/
