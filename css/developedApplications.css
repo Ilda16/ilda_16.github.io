@@ -18,9 +18,9 @@ body {
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
-    align-items: flex-start; /* Align items to the top */
-    flex-wrap: nowrap; /* Ensure items stay in one line */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 h1 {
@@ -29,11 +29,11 @@ h1 {
     background: white;
     padding: 10px;
     border-radius: 10px;
-    display: inline-block; /* Ensure the title fits inside the white border */
+    display: inline-block;
 }
 
 .showcase {
-    width: 200px; /* Fixed width for each showcase */
+    width: 200px;
     padding: 10px;
     margin: 10px;
     border: 2px solid black;
@@ -50,7 +50,7 @@ h1 {
 }
 
 img {
-    width: 100px; /* Smaller image size */
+    width: 100px;
     height: 100px;
     border-radius: 10px;
     object-fit: cover;
@@ -79,4 +79,48 @@ img {
 
 .links a:hover {
     color: #67cada;
+}
+
+/* Fullscreen Popup Image on Hover */
+.popup-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Apply only to images inside popup-container that are NOT popup-image */
+.popup-container img:not(.popup-image) {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.popup-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* This is important to prevent the global img rules from affecting the popup */
+img.popup-image {
+    width: 90vw !important;
+    height: auto !important;
+}
+
+.popup-container:hover .popup-image {
+  display: block;
 }
